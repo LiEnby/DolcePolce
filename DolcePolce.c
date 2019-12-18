@@ -18,7 +18,7 @@ static int check_psm_allowed(char **game, int *is_allowed, int *unk) {
     int ret = TAI_CONTINUE(int, check_psm_allowed_hook_ref,game, is_allowed, unk);
 	sceClibPrintf("[DolcePolce] check_psm_allowed(%s,%x,%x); ret = %x!\n",*game, *is_allowed, *unk, ret);
 	
-	if(*is_allowed <= 0)
+	if(*is_allowed != 1)
 	{
 		sceClibPrintf("[DolcePolce] check_psm_allowed: %s is blacklisted... launching anyway!\n",*game);
 		*is_allowed = 1;
@@ -31,7 +31,7 @@ static int check_vita_allowed(char **game, int *is_allowed, int *unk) {
     int ret = TAI_CONTINUE(int, check_vita_allowed_hook_ref, game, is_allowed, unk);
 	sceClibPrintf("[DolcePolce] check_vita_allowed(%s,%x,%x); ret = %x!\n",*game, *is_allowed, *unk, ret);
 	
-	if(*is_allowed <= 0)
+	if(*is_allowed != 1)
 	{
 		sceClibPrintf("[DolcePolce] check_vita_allowed: %s is blacklisted... launching anyway!\n",*game);
 		*is_allowed = 1;
@@ -44,10 +44,10 @@ static int check_pspemu_allowed(char **game, int *is_allowed, int *unk) {
     int ret = TAI_CONTINUE(int, check_pspemu_allowed_hook_ref, game, is_allowed, unk);
 	sceClibPrintf("[DolcePolce] check_pspemu_allowed(%s,%x,%x); ret = %x!\n",*game, *is_allowed, *unk, ret);
 	
-	if(*is_allowed <= 0)
+	if(*is_allowed != 0x1000001)
 	{
 		sceClibPrintf("[DolcePolce] check_pspemu_allowed %s is blacklisted... launching anyway!\n",*game);
-		*is_allowed = 1;
+		*is_allowed = 0x1000001;
 	}
 	
 	return ret;

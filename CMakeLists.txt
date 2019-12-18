@@ -34,7 +34,6 @@ target_link_libraries(DolcePolce
   SceLibKernel_stub
   SceAppMgr_stub
   SceLibc_stub
-  SceVshBridge_stub
   SceIofilemgr_stub
 )
 
