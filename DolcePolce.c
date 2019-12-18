@@ -16,12 +16,10 @@ static tai_hook_ref_t check_pspemu_allowed_hook_ref;
 
 static int check_psm_allowed(char **game, int *is_allowed, int *unk) {
     int ret = TAI_CONTINUE(int, check_psm_allowed_hook_ref,game, is_allowed, unk);
-	sceClibPrintf("[DolcePolce] check_psm_allowed(%s,%x,%x); ret = %x!\n",*game, *is_allowed, *unk, ret);
-	
-	if(*is_allowed != 1)
+	if(*is_allowed != 0x1)
 	{
 		sceClibPrintf("[DolcePolce] check_psm_allowed: %s is blacklisted... launching anyway!\n",*game);
-		*is_allowed = 1;
+		*is_allowed = 0x1;
 	}
 	
 	return ret;
@@ -29,12 +27,10 @@ static int check_psm_allowed(char **game, int *is_allowed, int *unk) {
 
 static int check_vita_allowed(char **game, int *is_allowed, int *unk) {
     int ret = TAI_CONTINUE(int, check_vita_allowed_hook_ref, game, is_allowed, unk);
-	sceClibPrintf("[DolcePolce] check_vita_allowed(%s,%x,%x); ret = %x!\n",*game, *is_allowed, *unk, ret);
-	
-	if(*is_allowed != 1)
+	if(*is_allowed != 0x1)
 	{
 		sceClibPrintf("[DolcePolce] check_vita_allowed: %s is blacklisted... launching anyway!\n",*game);
-		*is_allowed = 1;
+		*is_allowed = 0x1;
 	}
 	
 	return ret;
@@ -42,8 +38,6 @@ static int check_vita_allowed(char **game, int *is_allowed, int *unk) {
 
 static int check_pspemu_allowed(char **game, int *is_allowed, int *unk) {
     int ret = TAI_CONTINUE(int, check_pspemu_allowed_hook_ref, game, is_allowed, unk);
-	sceClibPrintf("[DolcePolce] check_pspemu_allowed(%s,%x,%x); ret = %x!\n",*game, *is_allowed, *unk, ret);
-	
 	if(*is_allowed != 0x1000001)
 	{
 		sceClibPrintf("[DolcePolce] check_pspemu_allowed %s is blacklisted... launching anyway!\n",*game);
@@ -58,8 +52,8 @@ static int check_pspemu_allowed(char **game, int *is_allowed, int *unk) {
 
 void _start() __attribute__ ((weak, alias ("module_start"))); 
 int module_start(SceSize argc, const void *args) {
-
-	sceClibPrintf("[DolcePolce] Loaded.. Blessed Be..\n");
+	sceClibPrintf("[DolcePolce] La Dolce Vita!\n");
+	
 
 	tai_module_info_t tai_info;
 	tai_info.size = sizeof(tai_module_info_t);
