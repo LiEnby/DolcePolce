@@ -12,3 +12,4 @@ Better than all previous "whitelist" hacks.
 
 Works on *ALL* PSV/PSP/PS1/PSM Content on CEX 3.60-3.73 
 
+Place under your ``*main`` entry in ``config.txt``
