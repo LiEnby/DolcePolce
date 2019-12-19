@@ -19,8 +19,6 @@ Place under your ``*main`` entry in ``config.txt``
 
 **La Dolce Vita!**
 
-Download: https://bitbucket.org/SilicaAndPina/dolcepolce/downloads/DolcePolce.suprx    
-
 # Credits
 Developers:
 SilicaAndPina
