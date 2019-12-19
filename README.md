@@ -19,6 +19,8 @@ Place under your ``*main`` entry in ``config.txt``
 
 **La Dolce Vita!**
 
+PS remove old whitelister v2 or your dlc & updates will still be broken.. 
+
 # Credits
 Developers:
 SilicaAndPina
