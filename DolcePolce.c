@@ -59,9 +59,43 @@ int module_start(SceSize argc, const void *args) {
 	tai_info.size = sizeof(tai_module_info_t);
 	taiGetModuleInfo("SceShell", &tai_info);
 		
-	// this is getting absolutely rediculous tbh but: 
+	/*
+	*	This HookFunctionOffset thing is really getting old but whatever .-.
+	*/
+
 	switch (tai_info.module_nid) { 
+		case 0x6CB01295: // devkit 3.60 SceShell
+		case 0x232D733B: // devkit 3.61 SceShell
+		case 0xE541DB9B: // devkit 3.63 SceShell
+			check_psm_allowed_hook = taiHookFunctionOffset(&check_psm_allowed_hook_ref, tai_info.modid,0,0x2E782,1, check_psm_allowed);
+			check_vita_allowed_hook = taiHookFunctionOffset(&check_vita_allowed_hook_ref, tai_info.modid,0,0x2E2DA,1, check_vita_allowed);
+			check_pspemu_allowed_hook = taiHookFunctionOffset(&check_pspemu_allowed_hook_ref, tai_info.modid,0,0x2E5E6,1, check_pspemu_allowed);
+			break;
+		case 0xE6A02F2B: //devkit 3.65 SceShell
+		case 0xAB5C2A00: //devkit 3.67 SceShell
+		case 0x4FE7C671: //devkit 3.68 SceShell
+		case 0xC5B7C871: //devkit 3.71 SceShell
+			check_psm_allowed_hook = taiHookFunctionOffset(&check_psm_allowed_hook_ref, tai_info.modid,0,0x2E7DA,1, check_psm_allowed);
+			check_vita_allowed_hook = taiHookFunctionOffset(&check_vita_allowed_hook_ref, tai_info.modid,0,0x2E332,1, check_vita_allowed);
+			check_pspemu_allowed_hook = taiHookFunctionOffset(&check_pspemu_allowed_hook_ref, tai_info.modid,0,0x2E63E,1, check_pspemu_allowed);
+			break;
+		case 0xEAB89D5C: // testkit 3.60 SceShell
+		case 0x7A5F8457: // testkit 3.61 SceShell
+		case 0xE7C5011A: // testkit 3.63 SceShell
+			check_psm_allowed_hook = taiHookFunctionOffset(&check_psm_allowed_hook_ref, tai_info.modid,0,0x2EBD8,1, check_psm_allowed);
+			check_vita_allowed_hook = taiHookFunctionOffset(&check_vita_allowed_hook_ref, tai_info.modid,0,0x2E730,1, check_vita_allowed);
+			check_pspemu_allowed_hook = taiHookFunctionOffset(&check_pspemu_allowed_hook_ref, tai_info.modid,0,0x2EA3C,1, check_pspemu_allowed);
+			break;
+		case 0x587F9CED: // testkit 3.65 SceShell
+		case 0x3C652B1A: // testkit 3.67 SceShell
+		case 0x4DF04256: // testkit 3.68 SceShell
+			check_psm_allowed_hook = taiHookFunctionOffset(&check_psm_allowed_hook_ref, tai_info.modid,0,0x2EC30,1, check_psm_allowed);
+			check_vita_allowed_hook = taiHookFunctionOffset(&check_vita_allowed_hook_ref, tai_info.modid,0,0x2E788,1, check_vita_allowed);
+			check_pspemu_allowed_hook = taiHookFunctionOffset(&check_pspemu_allowed_hook_ref, tai_info.modid,0,0x2EA94,1, check_pspemu_allowed);
+			break;
 		case 0x0552F692: // retail 3.60 SceShell
+		case 0x532155E5: // retail 3.61 SceShell
+		case 0xBB4B0A3E: // retail 3.63 SceShell
 			check_psm_allowed_hook = taiHookFunctionOffset(&check_psm_allowed_hook_ref, tai_info.modid,0,0x2E8D0,1, check_psm_allowed);
 			check_vita_allowed_hook = taiHookFunctionOffset(&check_vita_allowed_hook_ref, tai_info.modid,0,0x2E428,1, check_vita_allowed);
 			check_pspemu_allowed_hook = taiHookFunctionOffset(&check_pspemu_allowed_hook_ref, tai_info.modid,0,0x2E734,1, check_pspemu_allowed);
