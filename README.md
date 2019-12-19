@@ -2,6 +2,8 @@ CBPS Presents - a RikkaProject Production:
 
 # DolcePolce
 
+REMOVE YOUR OLD WHITELISTER V2 OTHERWISE GAME UPDATES & DLC WILL STILL BE BROKEN
+
 This is a plugin that patches the PSTV Blacklist checks directly from SceShell,
 no more living like its 3.51- patch the launch checks directly from SceShell-
 
