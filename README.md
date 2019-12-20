@@ -17,7 +17,7 @@ Works on *ALL* PSV/PSP/PS1/PSM Content on 3.60-3.73
 
 Place under your ``*main`` entry in ``config.txt``
 
-PS remove old whitelister v2 or your dlc & updates will still be broken.. 
+PS remove old whitelister v2 or your dlc & updates will still be broken...
 
 **La Dolce Vita!**
 
