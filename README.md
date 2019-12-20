@@ -23,6 +23,10 @@ PS remove old whitelister v2 or your dlc & updates will still be broken..
 
 Download: https://bitbucket.org/SilicaAndPina/dolcepolce/downloads/DolcePolce.suprx    
 
+UPDATE: This also allows you to run PSVita blacklisted titles such as "torne(トルネ)™ PlayStation®Vita TV"
+which normally will only run on PlayStation TV - i didnt even intend for this. but hey ill take it!
+
+
 # Credits
 Developers:
 SilicaAndPina
