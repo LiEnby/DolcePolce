@@ -3,7 +3,7 @@ CBPS Presents - a RikkaProject Production:
 # DolcePolce
 
 This is a plugin that patches the PSTV Blacklist checks directly from SceShell,
-no more living like its 3.51- patch the launch checks directly from SceShell-
+no more living like its 3.51 ..
 
 No more messing with app.db- no modding list_launch_vita.dat- 
 
