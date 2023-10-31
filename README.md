@@ -1,5 +1,3 @@
-CBPS Presents - a RikkaProject Production:
-
 # DolcePolce
 
 This is a plugin that patches the PSTV Blacklist checks directly from SceShell,
@@ -29,7 +27,7 @@ which normally will only run on PlayStation TV - i didnt even intend for this. b
 
 # Credits
 Developers:
-SilicaAndPina
+Li
 
 Beta Testers:
 Zodasaur
@@ -37,4 +35,4 @@ marburg
 IcySon55
 froid_san
 kirilldevchroma
-SilicaAndPina
+Li
