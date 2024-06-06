@@ -1,3 +1,5 @@
+This repository is no longer used. Any further development will occur at https://silica.codes/Li/dolcepolce.
+
 # DolcePolce
 
 This is a plugin that patches the PSTV Blacklist checks directly from SceShell,
