@@ -1,5 +1,3 @@
-CBPS Presents - a RikkaProject Production:
-
 # DolcePolce
 
 This is a plugin that patches the PSTV Blacklist checks directly from SceShell,
